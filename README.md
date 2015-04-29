@@ -19,6 +19,6 @@ Contributors:
   None so far besides me, will likely be updated.
   
 Open issues/bugs:
-  At the current moment the most issues I have is just a lack of content I want added, I'm currently planning to add a lot more and would love new ideas for it. I also used a switch for my user input and that has created a problem with inputing messages, I don't want to use numbers for inputs but I would also like to keep my main() as clean as possible and not have a hundred if statements to deal with inputs, if there is any suggestion for how to fix that it would be great.
+  At the current moment the most issues I have is just a lack of content I want added, I'm currently planning to add a lot more and would love new ideas for it. I also used a switch for my user input and that has created a problem with inputing messages, I don't want to use numbers for inputs but I would also like to keep my main() as clean as possible and not have a hundred if statements to deal with inputs, if there is any suggestion for how to fix that it would be great. A new issue I am seeing is the input for the switch is broken. I should have this fixed soon but if its not feel free to work on it.
   
 Note: Once again if you have any problems please feel free to sent me a email at doal7262@colorado.edu. Thank you.
