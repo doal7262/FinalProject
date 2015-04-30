@@ -6,6 +6,7 @@ a name and a pointer so that it can link with more nodes */
 struct Item
 {
     std::string name;
+    int cmdNumber;
     Item *next;
 
     Item(){};
@@ -24,7 +25,7 @@ class HashTable
         HashTable();
         ~HashTable();
         int initHash(std::string name);
-        void insertItem(std::string name);
+        void insertItem(std::string name, int cmdNumber);
         void printInventory();
         Item * findItem(std::string name);
     protected:
