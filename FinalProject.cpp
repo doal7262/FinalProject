@@ -19,6 +19,7 @@ int main()
     HashTable ht;
     TextAnswer T;
 
+    displayMenu();
     insertCommands(); // This inserts all available commands in a HashTable
 
 /* I like to use switches for my inputs, its makes it look a lot cleaner and makes any wrong input
@@ -87,7 +88,7 @@ void insertCommands()
 {
     HashTable ht;
 
-    ht.insertItem("weather", 1);
+    ht.insertItem("Weather", 1);
     ht.insertItem("Info", 2);
     ht.insertItem("Greeting", 3);
     ht.insertItem("Search", 4);

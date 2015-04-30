@@ -2,6 +2,7 @@
 #include "FinalProject.h"
 #include <string>
 
+using namespace std;
 /* Constructor for the hashtable, defines a name for each point in the array and sets their pointers
 to NULL */
 HashTable::HashTable()
@@ -52,7 +53,7 @@ void HashTable::insertItem(std::string name, int cmdNumber)
     {
         hashTable[index]->name = name;
         hashTable[index]->cmdNumber = cmdNumber;
-        std::cout << hashTable[index]->name << " is " << hashTable[index]->cmdNumber << std::endl;
+        std::cout << hashTable[index]->cmdNumber << ". " << hashTable[index]->name << std::endl;
     }
 
     else
@@ -62,7 +63,7 @@ void HashTable::insertItem(std::string name, int cmdNumber)
         n->name = name;
         std::cout << n->name << std::endl;
         n->next = NULL;
-        while(Ptr->next != NULL)
+        while(Ptr != NULL)
         {
             Ptr = Ptr->next;
         }
@@ -78,11 +79,13 @@ void HashTable::printInventory()
     for(int i = 0; i < tableSize; i++)
     {
         Item * Ptr = hashTable[i];
-        std::cout << "command: " << hashTable[i]->name << std::endl;
+        if(hashTable[i]->name != "nothing")   
+            std::cout << "command: " << hashTable[i]->name << std::endl;
         while(Ptr->next != NULL)
         {
             Ptr = Ptr->next;
-            std::cout << "command: " << std::endl;
+            if(Ptr->name != "nothing")      
+                std::cout << "command: " << std::endl;
         }
     }
 }
@@ -91,33 +94,33 @@ void HashTable::printInventory()
 it will return it found the item. */
 Item* HashTable::findItem(std::string name)
 {
-    int index2 = initHash(name);
-    bool foundName = false;
-    //std::string name;
-
-    Item * Ptr = hashTable[index2];
-
-    while(Ptr != NULL)
+    int sum = 0;
+    char ch;
+    bool found = true;
+    for(int i = 0; i < name.length(); i++)
     {
-        if(Ptr->name == name)
+        ch = (char)name[i];
+        sum = sum + int(ch);
+    }
+    sum = sum % tableSize;
+    Item *temp = new Item;
+    temp = hashTable[sum];
+    while(temp->name != name)
+    {
+        if(temp-> next != NULL)
         {
-            foundName = true;
-            //name = Ptr->name
+            temp = temp->next;
         }
-        Ptr = Ptr->next;
+        else
+        {
+            std::cout << "Not found" << std::endl;
+            found = false;
+            break;
+        }
     }
-
-    if(foundName == true)
-    {
-        std::cout << name << " found" << std::endl;
-    }
-
-    else
-    {
-        std::cout << name << " was not found" << std::endl;
-    }
+    if(found == true)
+        std::cout << "found" << std::endl;
 }
-
 /* Simple response to input 'Weather' */
 void TextAnswer::Weather()
 {
@@ -134,3 +137,4 @@ void TextAnswer::Info()
 void TextAnswer::Greeting()
 {
     std::cout << "Hello, I am J.A.R.V.I.S, input cmdList for a full list of my commands." << std::endl;
+}
