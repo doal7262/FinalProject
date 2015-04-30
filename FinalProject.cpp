@@ -14,6 +14,7 @@ int main()
     int input;
     bool quit = false;
     string command;
+    //int cmdNumber;
 
     HashTable ht;
     TextAnswer T;
@@ -33,26 +34,32 @@ have a response.*/
 
         switch (input)
         {
-        case 'Weather':
+        case 1: // Weather
+            T.Weather();
             break;
 
-        case 'Info':
+        case 2: // Info
             T.Info();
             break;
 
-        case 'Greeting':
+        case 3: // Greeting
             T.Greeting();
             break;
 
-        case 'Search':
+        case 4: // Search
             //string command;
             cout << "input a command" << endl;
             cin >> command;
             ht.findItem(command);
             break;
 
-        case 'cmdList':
+        case 5: // cmdList
             ht.printInventory();
+            break;
+
+        case 6: // Quit
+            cout << "GoodBye" << endl;
+            quit = true;
             break;
 
         default:
@@ -80,9 +87,9 @@ void insertCommands()
 {
     HashTable ht;
 
-    ht.insertItem("weather");
-    ht.insertItem("Info");
-    ht.insertItem("Greeting");
-    ht.insertItem("Search");
-    ht.insertItem("cmdList");
+    ht.insertItem("weather", 1);
+    ht.insertItem("Info", 2);
+    ht.insertItem("Greeting", 3);
+    ht.insertItem("Search", 4);
+    ht.insertItem("cmdList", 5);
 }
