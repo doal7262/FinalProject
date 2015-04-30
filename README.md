@@ -4,7 +4,7 @@ Project Overview:
   This project is supposed to work like a SIRI or Cortana that the apple and Windows Phones use. It's name is J.A.R.V.I.S and its purpose it so take any request that it has programmed in it and do that task. At the moment there is only very basic commands on it and I plan to add more over these next couple of weeks.
   
 How to Run:
-  This should be simple as it works just like downloading any of the c++ files from lectures. Simply download the files and then add them to project. You Should make a new project with what ever name you want and simply import the code. I used Code::Blocks so using that way may be the best, if there is any problems feel free to contact me at doal7262@colorado.edu
+  This should be simple as it works just like downloading any of the c++ files from lectures. Simply download the files and then add them to project. You Should make a new project with what ever name you want and simply import the code. I used Code::Blocks so using that way may be the best. Once the program builds and runs the numbers that are stated next to the words are the command you will want to put in to make that certain command run. if there is any problems feel free to contact me at doal7262@colorado.edu
   
 Dependencies:
   I'm really sure theres no dependencies you will need for this but if there is a case where you might need more information for what ever reason feel free to contact me on my email.
