@@ -44,13 +44,15 @@ int HashTable::initHash(std::string name)
 
 /* This function will take the string name and add it to the hashtable, if there is not enough space
 in the array for it the function will set the array node's pointer so that it forms a linked list */
-void HashTable::insertItem(std::string name)
+void HashTable::insertItem(std::string name, int cmdNumber)
 {
     int index = initHash(name);
 
     if(hashTable[index]->name == "nothing")
     {
         hashTable[index]->name = name;
+        hashTable[index]->cmdNumber = cmdNumber;
+        std::cout << hashTable[index]->name << " is " << hashTable[index]->cmdNumber << std::endl;
     }
 
     else
@@ -66,7 +68,7 @@ void HashTable::insertItem(std::string name)
         }
         Ptr->next = n;
     }
-    std::cout << "Item Added" << std::endl;
+    //std::cout << "Item Added" << std::endl;
 
 }
 
@@ -132,4 +134,3 @@ void TextAnswer::Info()
 void TextAnswer::Greeting()
 {
     std::cout << "Hello, I am J.A.R.V.I.S, input cmdList for a full list of my commands." << std::endl;
-}
