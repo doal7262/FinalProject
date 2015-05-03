@@ -5,9 +5,9 @@
 a name and a pointer so that it can link with more nodes */
 struct Item
 {
-    std::string name;
-    int cmdNumber;
-    Item *next;
+    std::string name = "";
+    int cmdNumber = 0;
+    Item *next = NULL;
 
     Item(){};
 

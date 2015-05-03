@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1430690555 source:/home/sinner/FinalProject/FinalProject.cpp
+	<iostream>
+	"FinalProject.h"
+
+1430690710 /home/sinner/FinalProject/FinalProject.h
+
+1430690698 source:/home/sinner/FinalProject/FinalProjectFunctions.cpp
+	<iostream>
+	"FinalProject.h"
+	<string>
+

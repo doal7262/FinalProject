@@ -26,9 +26,7 @@ int main()
 have a response.*/
     while(quit != true)
     {
-        displayMenu();
         cin >> input;
-
         // Clear out cin
         cin.clear();
         cin.ignore(10000, '\n');
