@@ -10,8 +10,8 @@ HashTable::HashTable()
     hashTable = new Item*[10];
     for(int i = 0; i < tableSize; i++)
     {
-        hashTable[i] = new Item;
-        hashTable[i]->name = "nothing";
+        hashTable[i] = new Item();
+        hashTable[i]->name = "";
         hashTable[i]->next = NULL;
     }
 }
@@ -33,7 +33,7 @@ int HashTable::initHash(std::string name)
     int hashT = 0;
     int index = 0;
 
-    for(int i = 0; i < name.length(); i++)
+    for(unsigned int i = 0; i < name.length(); i++)
     {
         hashT = hashT + (int)name[i];
     }
@@ -49,7 +49,7 @@ void HashTable::insertItem(std::string name, int cmdNumber)
 {
     int index = initHash(name);
 
-    if(hashTable[index]->name == "nothing")
+    if(hashTable[index]->name == "")
     {
         hashTable[index]->name = name;
         hashTable[index]->cmdNumber = cmdNumber;
@@ -59,15 +59,14 @@ void HashTable::insertItem(std::string name, int cmdNumber)
     else
     {
         Item * Ptr = hashTable[index];
-        Item * n = new Item;
-        n->name = name;
-        std::cout << n->name << std::endl;
-        n->next = NULL;
+        Item * newItem = new Item(name);
+        //n->name = name;
+        std::cout << newItem->name << std::endl;
         while(Ptr != NULL)
         {
             Ptr = Ptr->next;
         }
-        Ptr->next = n;
+        Ptr = newItem; /// Ptr->next = newItem - you already iterated until Ptr is NULL so you cant point NULL at something :)
     }
     //std::cout << "Item Added" << std::endl;
 
@@ -79,12 +78,12 @@ void HashTable::printInventory()
     for(int i = 0; i < tableSize; i++)
     {
         Item * Ptr = hashTable[i];
-        if(hashTable[i]->name != "nothing")   
+        if(hashTable[i]->name != "nothing")
             std::cout << "command: " << hashTable[i]->name << std::endl;
         while(Ptr->next != NULL)
         {
             Ptr = Ptr->next;
-            if(Ptr->name != "nothing")      
+            if(Ptr->name != "nothing")
                 std::cout << "command: " << std::endl;
         }
     }
@@ -96,30 +95,27 @@ Item* HashTable::findItem(std::string name)
 {
     int sum = 0;
     char ch;
-    bool found = true;
-    for(int i = 0; i < name.length(); i++)
+    //bool found = true;
+    for(unsigned int i = 0; i < name.length(); i++)
     {
         ch = (char)name[i];
         sum = sum + int(ch);
     }
     sum = sum % tableSize;
-    Item *temp = new Item;
+    Item *temp = new Item();
     temp = hashTable[sum];
-    while(temp->name != name)
+    while(temp != NULL)
     {
-        if(temp-> next != NULL)
+        if(temp->name == name)
         {
-            temp = temp->next;
+            std::cout << "found" << std::endl;
+            return temp; ///if found return pointer to location in hash of temp
         }
-        else
-        {
-            std::cout << "Not found" << std::endl;
-            found = false;
-            break;
-        }
+        temp = temp->next;
+
     }
-    if(found == true)
-        std::cout << "found" << std::endl;
+    std::cout << "not found" << std::endl;
+    return NULL; ///if not found return NULL
 }
 /* Simple response to input 'Weather' */
 void TextAnswer::Weather()
