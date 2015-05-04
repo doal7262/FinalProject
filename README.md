@@ -4,7 +4,7 @@ Project Overview:
   This project is supposed to work like a SIRI or Cortana that the apple and Windows Phones use. It's name is J.A.R.V.I.S and its purpose it so take any request that it has programmed in it and do that task. At the moment there is only very basic commands on it and I plan to add more over these next couple of weeks.
   
 How to Run:
-  This should be simple as it works just like downloading any of the c++ files from lectures. Simply download the files and then add them to project. You Should make a new project with what ever name you want and simply import the code. I used Code::Blocks so using that way may be the best. Once the program builds and runs the numbers that are stated next to the words are the command you will want to put in to make that certain command run. if there is any problems feel free to contact me at doal7262@colorado.edu
+  This should be simple as it works just like downloading any of the c++ files from lectures. Simply download the files and then add them to project. You only need to have FinalProject.cpp, FinalProject.h, and FinalProjectFunctions.cpp to run the other files can be ignored. You Should make a new project with what ever name you want and simply import the code. I used Code::Blocks so using that way may be the best. Once the program builds and runs the numbers that are stated next to the words are the command you will want to put in to make that certain command run. if there is any problems feel free to contact me at doal7262@colorado.edu
   
 Dependencies:
   I'm really sure theres no dependencies you will need for this but if there is a case where you might need more information for what ever reason feel free to contact me on my email.
@@ -19,6 +19,6 @@ Contributors:
   kbhu, kicksent
   
 Open issues/bugs:
-  At the current moment the most issues I have is just a lack of content I want added, I'm currently planning to add a lot more and would love new ideas for it. I also used a switch for my user input and that has created a problem with inputing messages, I don't want to use numbers for inputs but I would also like to keep my main() as clean as possible and not have a hundred if statements to deal with inputs, if there is any suggestion for how to fix that it would be great. The biggest bug I have right now is the insertItem functions seems to not be importing the names into the hashtables. 
+  Feature problems were Resolved. Seg fault issues were resolved. There are two known issues, one is that the insertHash function does not seem to be importing names into the hash so when you go to search for an option or output a list nothing shows up. The other problem is with the switches and the main menu for math, when initMath is called it main menu is brought up and through that another switch is impletemented, the problem is that when you press a number for a math function the first switch from the main menu uses it and does something else. 
   
 Note: Once again if you have any problems please feel free to sent me a email at doal7262@colorado.edu. Thank you.
