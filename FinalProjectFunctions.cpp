@@ -236,7 +236,7 @@ void TextAnswer::Game()
             std::cout << "Dragon killed you, game over" << std::endl;
         }
 
-        else if (gameCommand == "a")
+        else if (gameCommand == "s")
         {
             std::cout << "You have no army to storm the castle with, you died" << std::endl;
         }
