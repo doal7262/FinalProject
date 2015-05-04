@@ -34,11 +34,32 @@ class HashTable
         int tableSize = 10;
 };
 
+/* This class is specifically for Math, its purpose is to do basic math. Once the user inputs math
+initMath will be called and from there you can do addition, subtraction, multiplication, division
+and take a ratio */
+class Math
+{
+public:
+    //Math();
+    //~Math();
+    int initMath();
+    void setValues(int num1, int num2);
+    int addition(int num1, int num2);
+    int subtraction(int num1, int num2);
+    int multiplication(int num1, int num2);
+    int division(int num1, int num2);
+    int Ratio(int num1, int num2);
+protected:
+private:
+
+};
+
 /* This class is here specifically for the simple functions that pretty much only consist of couts.
 this helps with housekeeping. */
 class TextAnswer
 {
     public:
+        void Game();
         void Info();
         void Greeting();
         void Weather();
