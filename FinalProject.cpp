@@ -17,6 +17,8 @@ int main()
     bool quit = false;
     string command;
     //int cmdNumber;
+    int num1;
+    int num2;
 
 
     // Class Declarations
@@ -39,15 +41,15 @@ have a response.*/
 
         switch (input)
         {
-        case 1: // Weather
+        case 1: // Info
             T.Info();
             break;
 
-        case 2: // Info
+        case 2: // Greeting
             T.Greeting();
             break;
 
-        case 3: // Greeting
+        case 3: // Weather
             T.Weather();
             break;
 
@@ -62,15 +64,43 @@ have a response.*/
             ht.printInventory();
             break;
 
-        case 6: // Math
-            m.initMath();
+        case 6: // Addition
+            //quit = true;
+            cout << "Enter two numbers for addition" << endl;
+            cin >> num1 >> num2;
+            m.addition(num1, num2);
             break;
 
-        case 7: // Game
+        case 7: // Subtraction
+            cout << "Enter two numbers for subtraction" << endl;
+            cin >> num1 >> num2;
+            m.subtraction(num1, num2);
+            break;
+
+        case 8: // Multiplication
+            cout << "Enter two numbers for multiplication" << endl;
+            cin >> num1 >> num2;
+            m.multiplication(num1, num2);
+            break;
+
+        case 9: // Division
+            cout << "Enter two numbers for Division" << endl;
+            cin >> num1 >> num2;
+            m.division(num1, num2);
+            break;
+
+        case 10: // Ratio
+            cout << "Enter two numbers to take a ratio of" << endl;
+            cin >> num1 >> num2;
+            m.Ratio(num1, num2);
+            break;
+
+
+        case 11: // Game
             T.Game();
             break;
 
-        case 8: // Quit
+        case 12: // Quit
             cout << "GoodBye" << endl;
             quit = true;
             break;
@@ -91,7 +121,21 @@ have a response.*/
 /*This will appear everytime the menu starts */
 void displayMenu()
 {
-    cout << "Press 4 to search for a command or 5 for the full list" << endl;
+
+    cout << "=====Main Menu=====" << endl;
+    cout << "1. Info" << endl;
+    cout << "2. Greeting" << endl;
+    cout << "3. Weather" << endl;
+    cout << "4. Search" << endl;
+    cout << "5. Command List" << endl;
+    cout << "6. Addition" << endl;
+    cout << "7. Subtraction" << endl;
+    cout << "8. Muliplication" << endl;
+    cout << "9. Division" << endl;
+    cout << "10. Ratio" << endl;
+    cout << "11. Play a Game" << endl;
+    cout << "12. Quit" << endl;
+
     return;
 }
 
@@ -105,7 +149,11 @@ void insertCommands()
     ht.insertItem("Weather", 3);
     ht.insertItem("Search", 4);
     ht.insertItem("cmdList", 5);
-    ht.insertItem("Math", 6);
-    ht.insertItem("Game", 7);
-    ht.insertItem("Quit", 8);
+    ht.insertItem("Addition", 6);
+    ht.insertItem("Subtraction", 7);
+    ht.insertItem("Multiplication", 8);
+    ht.insertItem("Division", 9);
+    ht.insertItem("Ratio", 10);
+    ht.insertItem("Game", 11);
+    ht.insertItem("Quit", 12);
 }
