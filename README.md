@@ -19,6 +19,6 @@ Contributors:
   kbhu, kicksent
   
 Open issues/bugs:
-  Feature problems were Resolved. Seg fault issues were resolved. There are two known issues, one is that the insertHash function does not seem to be importing names into the hash so when you go to search for an option or output a list nothing shows up. The other problem is with the switches and the main menu for math, when initMath is called it main menu is brought up and through that another switch is impletemented, the problem is that when you press a number for a math function the first switch from the main menu uses it and does something else. 
+  Feature problems were Resolved. Seg fault issues were resolved. initMath clashing with the main menu issue has been resolved. The only remaining issue is the print command line. For some reason the names of the hashTables get lost in translation and when the function goes to print out all inserted names the names draw a blank and it just makes empty lines.
   
 Note: Once again if you have any problems please feel free to sent me a email at doal7262@colorado.edu. Thank you.
