@@ -1,4 +1,4 @@
-#include <iostream>
+
 #include "FinalProject.h"
 #include <string>
 
@@ -63,12 +63,14 @@ void HashTable::insertItem(std::string name, int cmdNumber)
         Item * Ptr = hashTable[index];
         Item * newItem = new Item(name);
         //n->name = name;
-        std::cout << newItem->name << std::endl;
+        //std::cout << newItem->name << std::endl;
         while(Ptr != NULL)
         {
             Ptr = Ptr->next;
         }
         Ptr = newItem; /// Ptr->next = newItem - you already iterated until Ptr is NULL so you cant point NULL at something :)
+        Ptr->name = name;
+        //std::cout << Ptr->name << std::endl;
     }
     //std::cout << "Item Added" << std::endl;
 
