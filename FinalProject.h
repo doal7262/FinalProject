@@ -44,11 +44,11 @@ public:
     //~Math();
     int initMath();
     void setValues(int num1, int num2);
-    int addition(int num1, int num2);
-    int subtraction(int num1, int num2);
-    int multiplication(int num1, int num2);
-    int division(int num1, int num2);
-    int Ratio(int num1, int num2);
+    void addition(int num1, int num2);
+    void subtraction(int num1, int num2);
+    void multiplication(int num1, int num2);
+    void division(int num1, int num2);
+    void Ratio(int num1, int num2);
 protected:
 private:
 
