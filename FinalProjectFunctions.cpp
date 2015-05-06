@@ -13,6 +13,7 @@ HashTable::HashTable()
         hashTable[i] = new Item();
         hashTable[i]->name = "";
         hashTable[i]->next = NULL;
+        //cout << hashTable[i]->name << endl;
     }
 }
 
@@ -52,6 +53,7 @@ void HashTable::insertItem(std::string name, int cmdNumber)
     if(hashTable[index]->name == "")
     {
         hashTable[index]->name = name;
+        //std::cout << hashTable[index]->name << std::endl;
         hashTable[index]->cmdNumber = cmdNumber;
         //std::cout << hashTable[index]->cmdNumber << ". " << hashTable[index]->name << std::endl;
     }
@@ -77,6 +79,7 @@ void HashTable::printInventory()
 {
     for(int i = 0; i < tableSize; i++)
     {
+        //std::cout << hashTable[i]->name << std::endl;
         Item * Ptr = hashTable[i];
         if(hashTable[i]->name != "")
             std::cout << "command: " << hashTable[i]->name << std::endl;
@@ -118,6 +121,7 @@ Item* HashTable::findItem(std::string name)
     return NULL; ///if not found return NULL
 }
 
+/*
 int Math::initMath()
 {
     int mathCommand;
@@ -165,6 +169,7 @@ int Math::initMath()
         return answer;
     }
 }
+*/
 
 /*
 int Math::Math()
@@ -178,36 +183,43 @@ int Math::~Math()
 }
 */
 
-int Math::addition(int num1, int num2)
+/* This is a math function, its main goal is to do some basic addition and return a value */
+void Math::addition(int num1, int num2)
 {
     int finalVal = num1 + num2;
-    return finalVal;
+    std::cout << "Answer is: " << finalVal << endl;
 }
 
-int Math::subtraction(int num1, int num2)
+/* This is a math function, its main goal is to do some basic addition and return a value */
+void Math::subtraction(int num1, int num2)
 {
     int finalVal = num1 - num2;
-    return finalVal;
+    std::cout << "Answer is: " << finalVal << endl;
 }
 
-int Math::multiplication(int num1, int num2)
+/* This is a math function, its main goal is to do some basic addition and return a value */
+void Math::multiplication(int num1, int num2)
 {
     int finalVal = num1 * num2;
-    return finalVal;
+    std::cout << "Answer is: " << finalVal << endl;
 }
 
-int Math::division(int num1, int num2)
+/* This is a math function, its main goal is to do some basic addition and return a value */
+void Math::division(int num1, int num2)
 {
     int finalVal = num1 / num2;
-    return finalVal;
+    std::cout << "Answer is: " << finalVal << endl;
 }
 
-int Math::Ratio(int num1, int num2)
+/* This is a math function, its main goal is to do some basic addition and return a value */
+void Math::Ratio(int num1, int num2)
 {
     int finalVal = num1 % num2;
-    return finalVal;
+    std::cout << "Answer is: " << finalVal << endl;
 }
 
+/* This is a text adventure game, the player will choses what to do through a commands that are hinted to
+him/her through the message and once a command has been entered the story continues */
 void TextAnswer::Game()
 {
     std::string gameCommand;
