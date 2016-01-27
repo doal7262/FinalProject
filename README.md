@@ -16,7 +16,7 @@ Group Members:
   This was a one man project by doal7262.
   
 Contributors:
-  kbhu, kicksent
+  kbhu, kicksent, MDXiao
   
 Open issues/bugs:
   Feature problems were Resolved. Seg fault issues were resolved. initMath clashing with the main menu issue has been resolved. The only remaining issue is the print command line. For some reason the names of the hashTables get lost in translation and when the function goes to print out all inserted names the names draw a blank and it just makes empty lines.
